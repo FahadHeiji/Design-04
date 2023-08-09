@@ -382,3 +382,162 @@ header .icons img {
 }
 
 /* E Targets */
+
+/* Tickets */
+
+.tickets .box {
+    border: 1px solid #ccc;
+    width: calc(50% - 10px);
+}
+
+
+@media (max-width: 767px) {
+    .tickets .box {
+        width: 100%;
+    }
+}
+
+/* Tickets */
+
+/* Latest News */
+
+.latest-news .news-row:not(:last-of-type) {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.latest-news .news-row img {
+    width: 100px;
+    border-radius: 6px;
+    margin-right: 1.5rem;
+}
+
+.latest-news .info {
+    flex-grow: 1;
+}
+
+.latest-news .info h3 {
+    margin: 0 0 0.6rem;
+}
+
+@media (max-width: 767px) {
+    .latest-news .news-row {
+        display: block;
+    }
+
+    .latest-news .news-row .label {
+        margin: 1rem auto;
+        width: fit-content;
+    }
+}
+
+/* Latest News */
+
+/* Tasks */
+
+.tasks .task-row:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-row .info {
+    flex-grow: 1;
+}
+
+.task-row.done {
+    opacity: 0.3;
+}
+
+.task-row.done h3,
+.task-row.done p {
+    text-decoration: line-through;
+}
+
+.task-row .delete {
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.6rem;
+}
+
+.task-row .delete:hover {
+    color: var(--red-color);
+}
+
+/* Tasks */
+
+/* Latest upload */
+
+.latest-upload ul li:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+}
+
+.latest-upload ul li img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Latest upload */
+
+/* Last Project */
+
+.last-project ul::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--blue-color);
+}
+
+.last-project ul li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: block;
+    background-color: white;
+    border: 2px solid white;
+    outline: 2px solid var(--blue-color);
+    margin-right: 1.5rem;
+    z-index: 1;
+}
+
+
+.last-project ul li.done:not(:last-of-type)::before {
+    content: "";
+    background-color: var(--blue-color);
+}
+
+.last-project ul li.current::before {
+    animation: change-color 0.8s infinite alternate;
+}
+
+.last-project .lunch-icon {
+    position: absolute;
+    width: 160px;
+    right: 0;
+    bottom: 0;
+    opacity: 0.2;
+}
+
+/* Last Project */
+
+
+
+
+
+/* Animation */
+
+@keyframes change-color {
+    from {
+        background-color: var(--blue-color);
+    }
+
+    to {
+        background-color: white;
+    }
+}
+
+/* Animation */
