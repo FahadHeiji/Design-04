@@ -5,6 +5,7 @@
     --green-color: #22c55e;
     --red-color: #f44336;
     --gray-color: #888;
+    --font-awesome: "Font Awesome 6 Free";
 }
 
 *,
@@ -134,7 +135,7 @@ ul {
 }
 
 header .search::before {
-    font-family: "Font Awesome 6 Free";
+    font-family: var(--font-awesome);
     content: "\f002";
     font-weight: 900;
     position: absolute;
@@ -251,7 +252,7 @@ header .icons img {
 
 .welcome .body>div {
     flex: 1;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .welcome .visit {
@@ -526,21 +527,24 @@ header .icons img {
 
 /* Reminders */
 
-.reminders ul li  .key {
+.reminders ul li .key {
     width: 15px;
     height: 15px;
 }
 
-.reminders ul li > .blue {
+.reminders ul li>.blue {
     border-left: 2px solid var(--blue-color);
 }
-.reminders ul li > .green {
+
+.reminders ul li>.green {
     border-left: 2px solid var(--green-color);
 }
-.reminders ul li > .orange {
+
+.reminders ul li>.orange {
     border-left: 2px solid var(--orange-color);
 }
-.reminders ul li > .red {
+
+.reminders ul li>.red {
     border-left: 2px solid var(--red-color);
 }
 
@@ -602,35 +606,138 @@ header .icons img {
     background-color: rgba(24, 118, 242, 0.2);
     color: #1877f2;
 }
+
 .social .facebook i {
     background-color: #1877f2;
 }
+
 .social .facebook a {
     background-color: #1877f2;
 }
+
 .social .youtube {
     background-color: rgba(255, 0, 0, 0.2);
     color: #ff0000;
 }
+
 .social .youtube i {
     background-color: #ff0000;
 }
+
 .social .youtube a {
     background-color: #ff0000;
 }
+
 .social .linkedin {
     background-color: rgba(10, 102, 194, 0.2);
     color: #0a66c2;
 }
+
 .social .linkedin i {
     background-color: #0a66c2;
 }
+
 .social .linkedin a {
     background-color: #0a66c2;
 }
 
 /* Social */
 
+/* Project Table */
+
+.projects .responsive-table {
+    overflow: auto;
+}
+
+.projects table {
+    min-width: 1000px;
+    border-spacing: 0;
+}
+
+.projects table td {
+    padding: 1.5rem;
+}
+
+.projects thead td {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+.projects tbody td {
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.projects tbody tr td:last-child {
+    border-right: 1px solid #eee;
+}
+
+.projects tbody tr:hover td {
+    background-color: #faf7f7;
+}
+
+.projects table img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 2px;
+    background-color: white;
+}
+
+.projects table img:not(:first-child) {
+    margin-left: -2rem;
+}
+
+/* Project Table */
+
+/* Settings */
+
+.toggle-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.toggle-switch {
+    background-color: #ccc;
+    width: 78px;
+    height: 32px;
+    border-radius: 15px;
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.toggle-switch::before {
+    font-family: var(--font-awesome);
+    content: "\f00d";
+    font-weight: 900;
+    background-color: white;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    color: #aaa;
+
+}
+
+.toggle-checkbox:checked+.toggle-switch {
+    background-color: var(--blue-color);
+}
+
+.toggle-checkbox:checked+.toggle-switch::before {
+    content: "\f00c";
+    left: 50px;
+    color: var(--blue-color);
+}
+
+/* Settings */
 
 
 /* Animation */
