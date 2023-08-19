@@ -714,7 +714,7 @@ header .icons img {
 
 @media (max-width:767px) {
     .settings-page {
-        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         margin-left: 1rem;
         margin-right: 1rem;
         gap: 10px;
@@ -930,7 +930,11 @@ header .icons img {
     opacity: 1;
 }
 
-
+@media (max-width: 767px) {
+    .settings-page .backup .plan {
+        flex-wrap: wrap;
+    }
+}
 
 
 
@@ -959,7 +963,10 @@ header .icons img {
         transform: translateY(-7px);
     }
 
+
+
 }
+
 
 .profile-data>div {
     flex-direction: column;
@@ -974,6 +981,14 @@ header .icons img {
     width: 182px;
     height: 6px;
     margin: 1rem auto;
+}
+
+@media (max-width: 767px) {
+    .profile-data .progress {
+        width: 90%;
+        height: 6px;
+        margin: 1rem auto;
+    }
 }
 
 .profile-data .progress span {
@@ -1012,6 +1027,7 @@ header .icons img {
     height: 20px;
 }
 
+
 .profile-data .info .toggle-switch::before {
     width: 14px;
     height: 14px;
@@ -1021,6 +1037,51 @@ header .icons img {
 
 .profile-data .info .toggle-checkbox:checked+.toggle-switch::before {
     transform: translateX(52px);
+}
+
+@media (max-width: 767px) {
+    .profile-data .boxes {
+        border-left: 0;
+    }
+
+    .profile-data .box {
+        padding: 2rem 1rem;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .profile-data .info {
+        flex-direction: column;
+
+
+    }
+
+    .profile-data .info .toggle-switch {
+        display: flex;
+        justify-content: baseline;
+        width: 100%;
+        height: 20px;
+    }
+
+    .profile-data .info .toggle-switch::before {
+
+        transform: translateX(1px);
+    }
+
+    .profile-data .info .toggle-checkbox:checked+.toggle-switch::before {
+        transform: translateX(-21px);
+    }
+
+    .skills-box {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .skills-box * {
+        width: fit-content;
+        align-self: center;
+    }
 }
 
 .latest-activities {
@@ -1075,6 +1136,425 @@ header .icons img {
         flex-direction: column;
     }
 }
+
+/* E Profile */
+
+/* S Projects */
+
+.projects-page .project>span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+.projects-page .project img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: -1.5rem;
+}
+
+.projects-page .project .p-info {
+    flex-direction: column;
+}
+
+.projects-page .project .p-tasks {
+    justify-content: flex-end;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.projects-page .project .p-price .progress {
+    height: 8px;
+    width: 100%;
+    max-width: 260px;
+
+}
+
+.projects-page .project .p-price .progress span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 6px;
+}
+
+@media (max-width: 767px) {
+
+    .projects-page {
+        grid-template-columns: repeat(1, minmax(250px, 1fr));
+    }
+
+    .projects-page .project .p-tasks,
+    .projects-page .project .p-price {
+        flex-direction: column;
+
+    }
+
+    .projects-page .project {
+        margin-left: -1rem;
+    }
+}
+
+/* E Projects */
+
+/* S Courses */
+
+.course-page {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (max-width: 767px) {
+    .course-page {
+        grid-template-columns: minmax(200px, 1fr);
+    }
+}
+
+.course-page .item {
+    flex-direction: column;
+}
+
+.course-page .item-info img {
+    width: 100%;
+}
+
+.course-page .item-info .avatar {
+    width: 70px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.course-page .item .item-text {
+    border-bottom: 1px solid #eee;
+}
+
+.course-page .item .item-text .info {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.course-page .item .item-price span::before {
+    font-family: var(--font-awesome);
+    font-weight: 900;
+    left: 0;
+    margin-right: 0.5rem;
+}
+
+.course-page .item .item-price span:first-of-type::before {
+    content: "\f007";
+}
+
+.course-page .item .item-price span:last-of-type::before {
+    content: "\24";
+}
+
+/* E Courses */
+
+/* S Friends */
+
+.friend-page {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (max-width: 767px) {
+    .friend-page {
+        grid-template-columns: minmax(200px, 1fr);
+    }
+
+    .friend-page .friend-card .card-contact {
+        top: 5px;
+        transform: translateX(-10px);
+
+    }
+
+    .friend-page .friend-card .card-contact i {
+        font-size: 10px;
+
+    }
+}
+
+.friend-page .friend-card {
+    flex-direction: column;
+}
+
+.friend-page .friend-card .card-contact {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+}
+
+.friend-page .friend-card .card-contact i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #eee;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 767px) {
+
+    .friend-page .friend-card .card-contact {
+        top: 10px;
+        transform: translateX(-10px);
+
+    }
+
+    .friend-page .friend-card .card-contact i {
+        font-size: 10px;
+
+    }
+}
+
+.friend-page .friend-card .card-info {
+    flex-direction: column;
+    border-bottom: 1px solid #eee;
+}
+
+.friend-page .friend-card .card-info img {
+    width: 100px;
+    border-radius: 50%;
+    margin: 1rem 0;
+}
+
+.friend-page .friend-card .card-status {
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: 1px solid #eee;
+}
+
+.friend-page .friend-card .card-status .vip {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--orange-color);
+    transform: translateY(-50%);
+    opacity: 0.2;
+}
+
+.friend-page .friend-card .card-status span::before {
+    font-family: var(--font-awesome);
+    font-weight: 900;
+    position: absolute;
+    display: inline-flex;
+    align-items: baseline;
+    transform: translate(-21px, 3px);
+}
+
+.friend-page .friend-card .card-status span:nth-of-type(1)::before {
+    content: "\f118";
+    font-weight: 400;
+
+}
+
+.friend-page .friend-card .card-status span:nth-of-type(2)::before {
+    content: "\f386";
+    transform: translate(-23px, 3px);
+}
+
+.friend-page .friend-card .card-status span:nth-of-type(3)::before {
+    content: "\f1ea";
+}
+
+@media (max-width: 767px) {
+
+    .friend-page .friend-card .card-status {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .friend-page .friend-card .card-status span:nth-of-type(1)::before {
+        content: "\f118";
+        font-weight: 400;
+        transform: translate(-27px, 3px);
+    }
+
+    .friend-page .friend-card .card-status span:nth-of-type(2)::before {
+        content: "\f386";
+
+    }
+
+    .friend-page .friend-card .card-status span:nth-of-type(3)::before {
+        content: "\f1ea";
+        transform: translate(-24px, 3px);
+    }
+
+    .friend-page .friend-card .card-history {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* E Friends */
+
+/* S Files */
+
+.file-page {
+    grid-template-columns: 1fr auto;
+}
+
+@media (max-width: 767px) {
+    .file-page {
+        grid-template-columns: 1fr;
+    }
+}
+
+.files-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.files-list .file-card {
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.files-list .file-card .file-info {
+    border-bottom: 1px solid #eee;
+}
+
+.files-list .file-card .file-info i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+}
+
+.files-list .file-card .file-info img {
+    width: 64px;
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+}
+
+.files-list .file-card:hover .file-info img {
+    transform: rotate(6deg);
+}
+
+.files-list .file-card .file-info span {
+    text-align: left;
+}
+
+.file-page .file-status {
+    flex-direction: column;
+    justify-content: space-around;
+    width: 260px;
+    min-height: 260px;
+    max-height: 500px;
+}
+
+@media (max-width: 767px) {
+
+    .file-page .file-status {
+        grid-row: 1;
+        width: 100%;
+    }
+}
+
+.file-page .file-status a {
+    align-self: center;
+    position: relative;
+}
+
+.file-page .file-status a::before {
+    font-family: var(--font-awesome);
+    font-weight: 900;
+    content: "\f102";
+    margin-right: 0.9rem;
+    align-items: baseline;
+    font-size: 12px;
+}
+
+.file-page .file-status .box {
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.file-page .file-status i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.file-page .file-status i.blue {
+    background-color: #0077ff47;
+    color: var(--blue-color);
+}
+
+.file-page .file-status i.green {
+    background-color: #22c55e47;
+    color: var(--green-color);
+}
+
+.file-page .file-status i.red {
+    background-color: #f4433647;
+    color: var(--red-color);
+}
+
+.file-page .file-status i.orange {
+    background-color: #f59e0b47;
+    color: var(--orange-color);
+}
+
+/* E Files */
+
+/* S Plans */
+
+.plan-page {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+@media (max-width: 767px) {
+    .plan-page {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (min-width: 1500px) {
+    .plan-page {
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+}
+
+
+.plan-page .plan-card .top {
+    border: 2px solid white;
+    outline: 3px solid transparent;
+}
+
+.plan-page .plan-card .top.green {
+    outline-color: var(--green-color);
+}
+
+.plan-page .plan-card .top.blue {
+    outline-color: var(--blue-color);
+}
+
+.plan-page .plan-card .top.orange {
+    outline-color: var(--orange-color);
+}
+
+.plan-page .plan-card .top span {
+    position: absolute;
+    transform: translateX(-100px);
+}
+
+.plan-page .plan-card .top.orange span {
+    transform: translateX(-120px);
+}
+
+/* E Plans */
 
 /* Animation */
 
